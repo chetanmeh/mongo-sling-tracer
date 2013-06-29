@@ -17,6 +17,13 @@
   <name>MongoDB Query Tracer</name>
   <description>Bundle to demonstrate exposing service via Blueprint</description>
 
+  <scm>
+    <connection>scm:git:https://github.com/chetanmeh/mongo-sling-tracer.git</connection>
+    <developerConnection>scm:git:git@github.com:chetanmeh/mongo-sling-tracer.git</developerConnection>
+    <url>https://github.com/chetanmeh/mongo-sling-tracer</url>
+    <tag>HEAD</tag>
+  </scm>
+
   <build>
     <plugins>
       <plugin>
@@ -87,4 +94,44 @@
       <version>4.2.0</version>
     </dependency>
   </dependencies>
+
+  <distributionManagement>
+    <repository>
+      <id>bintray</id>
+      <url>https://api.bintray.com/maven/chetanmeh/mongo-sling-tracer/package</url>
+    </repository>
+  </distributionManagement>
+
+  <profiles>
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
 </project>
