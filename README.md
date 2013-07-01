@@ -3,14 +3,17 @@ Mongo and Apache Sling Request Progress Tracker
 
 
 This module enables logging of queries made to Mongo DB while perfoming any
-request processing in Sling to [Request Progress Tracker] [1]. It builds up on
+request processing in Sling to [Request Progress Tracker] [1]. This allows
+one to get an insight into the kind of remote requests being made to Mongo DB
+
+It builds up on
 on [Query Logging Enhancement] [2] patch for Mongo Java Driver. This patch enables
 logging of calls made to Mongo server.
 
 To make use of this in your Sling instance follow steps below
 
 1. Download and install patched [Mongo Java Driver] [3]. Or build it from [JAVA-374-2.9.x][4] branch
-2. Download and install [Mongo Sling Tracer] [5]. Or build it from https://github.com/chetanmeh/mongo-sling-tracer
+2. Download and install [Mongo Sling Tracer] [5]. Or build it from [here] [7]
 3. Enable the tracer from Web Console via Configurations. http://localhost:4502/system/console/configMgr/com.github.chetanmeh.mongo.tracer.internal.MongoQueryTracer. Or look for Configuration named `Mongo SLing Request Progress Tracer`
 4. Check out the [recent requests][6] tab to see the progress of last couple of request. Below is a sample output
    from a Sling instance running Oak backed by Mongo MK
@@ -29,3 +32,4 @@ To make use of this in your Sling instance follow steps below
 [4]: https://github.com/chetanmeh/mongo-java-driver/tree/JAVA-374-2.9.x
 [5]: http://chetanmeh.github.io/binary/com.github.chetanmeh.mongo-sling-tracer-0.0.1-SNAPSHOT.jar
 [6]: http://localhost:4502/system/console/requests
+[7]:https://github.com/chetanmeh/mongo-sling-tracer
